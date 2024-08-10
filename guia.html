@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="joyas, joyeria, cadenas de oro, anillos, pendientes">
     <title>Joyas Vico</title>
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="./favicon/favicon.ico" type="image/x-icon">
     <style>
         
         .header {
@@ -155,12 +157,15 @@
                     <div class="content text-center">
                         <p class="display-4">Guía gratuita</p>
                         <p class="fs-3">El Secreto para Mantener tus Joyas Brillantes</p>
-                        <form>
+                        <form id="downloadForm">
                             <div class="form-group">
-                                <input type="email" class="form-control" id="inputEmail" placeholder="Tu correo electrónico">
+                                <input type="email" class="form-control" id="inputEmail" placeholder="Tu correo electrónico" required>
                             </div>
-                            <button type="submit" class="btn btn-secondary btn-lg">Obtén tu guía</button>
+                            <button type="button" id="downloadButton" class="btn btn-secondary btn-lg">Obtén tu guía</button>
                         </form>
+                        <!-- Enlace para la descarga -->
+                        <a id="downloadLink" href="manual/Manual de cuidado_Joyas Vico.pdf" download="Guia_Joyas_Vico.pdf" style="display: none;">Descargar</a>
+                        
                     </div>
                 </div>
             </div>
@@ -192,9 +197,16 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="funcion.js"></script>
+    <script>
+        // Tu JavaScript para manejar la descarga
+        document.getElementById('downloadButton').addEventListener('click', function() {
+            var link = document.getElementById('downloadLink');
+            link.click();
+        });
+    </script>
 </body>
 </html>
